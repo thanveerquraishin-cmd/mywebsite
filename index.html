@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanveer Quraishin | Portfolio</title>
+    <title>Thanveer Quraishin | The Storyteller</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         window.tailwind.config = {
             theme: {
@@ -12,7 +14,6 @@
                     colors: {
                         brand: {
                             500: '#6366f1',
-                            600: '#4f46e5',
                         },
                         dark: {
                             800: '#1e293b',
@@ -33,23 +34,20 @@
         };
     </script>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
         
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; }
+
         .hero-bg {
-            background-color: #0f172a; 
-            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 1)), url('IMG.gif');
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 1)), url('IMG.gif');
             background-size: cover;
-            background-position: center 30%;
+            background-position: center 20%;
             background-repeat: no-repeat;
         }
 
         .scroll-animate {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
@@ -62,93 +60,75 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 200px; 
-            padding: 0 10px; 
+            min-width: 200px;
         }
 
         .client-logo {
-            max-height: 100px; 
+            max-height: 80px;
             width: auto;
-            opacity: 0.6;
+            opacity: 0.4;
             filter: grayscale(1) brightness(1.5);
-            transition: all 0.4s ease;
+            transition: opacity 0.3s ease;
         }
         
         .logo-item:hover .client-logo {
             opacity: 1;
-            filter: grayscale(0) brightness(1);
-            transform: scale(1.1);
+        }
+
+        /* The Clamped Typography Look - matching "LET'S TALK" */
+        .clamped-text {
+            line-height: 0.75 !important;
+            letter-spacing: -0.06em !important;
         }
 
         .experience-card {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid rgba(99, 102, 241, 0.2);
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
         }
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 0;
-            width: 10px;
-            height: 10px;
-            background: #6366f1;
-            border-radius: 50%;
-        }
-
-        .big-punch-text {
-            line-height: 0.8; 
-            letter-spacing: -0.05em;
-        }
-
-        .highlight-tag {
-            background: #312e81; 
-            color: #ffffff;
-            backdrop-filter: blur(8px);
-            padding: 0.2em 0.6em;
-            border-radius: 0.2em;
-        }
-
-        .software-badge {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 0.6rem 1.2rem;
-            border-radius: 0.75rem;
-            font-size: 0.7rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-        }
-        .software-badge:hover {
-            background: #6366f1;
-            transform: translateY(-3px);
+        
+        .experience-card:hover {
             border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .software-grid-item {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .software-grid-item:hover {
+            color: #6366f1;
         }
     </style>
 </head>
-<body class="bg-dark-900 text-white font-sans selection:bg-brand-500 selection:text-white">
+<body class="text-white selection:bg-brand-500 selection:text-white overflow-x-hidden">
 
     <!-- Header -->
-    <header class="fixed w-full z-50 bg-dark-900/40 backdrop-blur-xl border-b border-white/5">
+    <header class="fixed w-full z-50 bg-dark-900/60 backdrop-blur-2xl border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-2 group cursor-pointer">
-                    <div class="w-10 h-10 rounded-lg bg-white text-black flex items-center justify-center font-black text-xl tracking-tighter shadow-lg group-hover:bg-brand-500 group-hover:text-white transition-all">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-white text-black flex items-center justify-center font-black text-xl tracking-tighter shadow-lg">
                         TQ
                     </div>
+                    <span class="text-[10px] font-black uppercase tracking-[0.3em] hidden sm:block">THE STORYTELLER</span>
                 </div>
 
-                <nav class="hidden md:flex space-x-10">
-                    <a href="#home" class="text-xs font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Home</a>
-                    <a href="#about" class="text-xs font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">About</a>
-                    <a href="#experience" class="text-xs font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Experience</a>
-                    <a href="#portfolio" class="text-xs font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Works</a>
-                    <a href="#contact" class="text-xs font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Contact</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="#about" class="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">About</a>
+                    <a href="#experience" class="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Experience</a>
+                    <a href="#portfolio" class="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Works</a>
+                    <a href="#soft-refs" class="text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors">Stack & Refs</a>
                 </nav>
 
                 <div class="flex items-center gap-4">
-                    <a href="https://wa.me/94777436116" target="_blank" class="px-5 py-2 bg-white text-black text-xs font-black uppercase tracking-widest rounded-full hover:bg-brand-500 hover:text-white transition-all">
+                    <a href="https://wa.me/94777436116" target="_blank" class="px-5 py-2 bg-brand-500 text-white text-[10px] font-black uppercase tracking-widest rounded hover:bg-white hover:text-black transition-all">
                         Let's Talk
                     </a>
                 </div>
@@ -157,36 +137,56 @@
     </header>
 
     <main>
-        <!-- Hero Section - Gap Reduced -->
-        <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden hero-bg pt-20">
-            <div class="max-w-7xl mx-auto px-4 text-center relative z-10 -mt-10">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
+            <div class="max-w-7xl mx-auto px-4 text-center relative z-10 pt-20">
                 <div class="fade-in">
-                    <h1 class="big-punch-text text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black mb-6 drop-shadow-2xl">
+                    <span class="inline-block px-3 py-1 bg-brand-500 text-white text-[10px] font-black uppercase tracking-[0.4em] mb-12 rounded">
+                        ESTABLISHED 1985
+                    </span>
+                    
+                    <h1 class="clamped-text text-7xl sm:text-9xl md:text-[11rem] lg:text-[13.5rem] font-black mb-10 drop-shadow-2xl uppercase">
                         THANVEER <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">QURAISHIN</span>
+                        QURAISHIN
                     </h1>
-                    
-                    <div class="mb-8">
-                        <h2 class="inline-block text-xl sm:text-3xl md:text-4xl font-bold tracking-tight drop-shadow-lg highlight-tag uppercase">
-                            Visual & Audio Storyteller
-                        </h2>
-                    </div>
 
-                    <p class="mt-0 text-sm md:text-lg text-gray-300 mb-10 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md px-4 opacity-90">
-                        Senior Video Editor & Music Composer with over 10 years of professional expertise. Specialized in crafting impactful narratives through visuals and sound.
-                    </p>
+                    <div class="flex items-center justify-center gap-4 mb-16">
+                        <div class="h-px w-12 bg-white/20"></div>
+                        <span class="text-xs md:text-sm font-black uppercase tracking-[0.8em] text-gray-400">The Storyteller</span>
+                        <div class="h-px w-12 bg-white/20"></div>
+                    </div>
                     
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#portfolio" class="px-8 py-4 bg-brand-500 text-white rounded-full font-black uppercase tracking-widest text-xs hover:scale-105 transition-all shadow-xl shadow-brand-500/20">
+                    <div class="flex flex-col sm:flex-row justify-center gap-6">
+                        <a href="#portfolio" class="px-10 py-5 bg-white text-black rounded font-black uppercase tracking-widest text-[10px] hover:bg-brand-500 hover:text-white transition-all transform hover:scale-105">
                             Explore Works
                         </a>
-                        <a href="#about" class="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-black uppercase tracking-widest text-xs hover:bg-white/20 transition-all">
-                            About Me
+                        <a href="#contact" class="px-10 py-5 bg-white/5 backdrop-blur-md border border-white/20 text-white rounded font-black uppercase tracking-widest text-[10px] hover:bg-white/10 transition-all">
+                            Contact Me
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-dark-900 to-transparent"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32 bg-dark-900">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="scroll-animate">
+                    <h2 class="text-brand-500 font-black text-xs tracking-[0.5em] uppercase mb-8">About Me</h2>
+                    <h3 class="text-4xl md:text-7xl font-black uppercase leading-[0.9] mb-12">
+                        CRAFTING NARRATIVES <br> <span class="text-gray-600">THROUGH MOTION.</span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <p class="text-gray-400 font-medium leading-relaxed text-xl italic">
+                            "Every frame is a canvas, every cut is a beat. My goal is to find the soul within the footage."
+                        </p>
+                        <p class="text-gray-500 font-medium leading-relaxed">
+                            With over a decade of high-level experience, I combine the technical rigor of a senior editor with the creative intuition of a composer. I specialize in high-impact visual storytelling that bridges the gap between commercial demand and artistic integrity.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Logo Slider -->
@@ -199,145 +199,217 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-24 bg-dark-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <!-- Work Experience -->
+        <section id="experience" class="py-32 bg-dark-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-20 scroll-animate">
+                    <div>
+                        <h2 class="clamped-text text-6xl md:text-9xl font-black uppercase">WORK<br><span class="text-brand-500">EXPERIENCE</span></h2>
+                    </div>
+                    <div class="h-px w-full md:w-1/4 bg-white/10 mt-8 md:mb-6"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-animate">
+                    <div class="experience-card p-10 rounded-2xl border-brand-500/30">
+                        <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">Current</div>
+                        <h3 class="text-2xl font-black uppercase mb-1">Freelance Video Editor</h3>
+                        <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">Open to Work</p>
+                    </div>
+
+                    <div class="experience-card p-10 rounded-2xl">
+                        <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2024 - Feb 2025</div>
+                        <h3 class="text-2xl font-black uppercase mb-1">PORT CITY BPO, AITKEN SPENCE</h3>
+                        <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">VIDEO EDITOR | GRAPHIC DESIGNER</p>
+                    </div>
+
+                    <div class="experience-card p-10 rounded-2xl">
+                        <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2022 - 2024</div>
+                        <h3 class="text-2xl font-black uppercase mb-1">FIRST GLOBAL ACADEMY</h3>
+                        <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">VIDEO EDITOR | GRAPHIC DESIGNER</p>
+                    </div>
+
+                    <div class="experience-card p-10 rounded-2xl">
+                        <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2021 - 2022</div>
+                        <h3 class="text-2xl font-black uppercase mb-1">VIBE TELEVISION</h3>
+                        <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">EXECUTIVE SENIOR VIDEO EDITOR</p>
+                    </div>
+
+                    <div class="experience-card p-10 rounded-2xl">
+                        <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2018 - 2021</div>
+                        <h3 class="text-2xl font-black uppercase mb-1">ROAR GLOBAL</h3>
+                        <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">SENIOR VIDEO EDITOR</p>
+                    </div>
+
+                    <div class="experience-card p-10 rounded-2xl">
+                        <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2011 - 2018</div>
+                        <h3 class="text-2xl font-black uppercase mb-1">D STUDIO CMB</h3>
+                        <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">VIDEO EDITOR | GRAPHIC DESIGNER</p>
+                    </div>
+
+                    <div class="experience-card p-10 rounded-2xl">
+                        <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2005 - 2008</div>
+                        <h3 class="text-2xl font-black uppercase mb-1 leading-tight">ASSOCIATED NEWSPAPERS OF CEYLON LTD</h3>
+                        <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">GRAPHIC DESIGNER | COLOMBO 01</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Software & References -->
+        <section id="soft-refs" class="py-32 bg-dark-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Stack Row -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-32">
+                    <!-- Tech Stack -->
                     <div class="scroll-animate">
-                        <h2 class="text-xs font-black uppercase tracking-[0.5em] text-brand-500 mb-6">Introduction</h2>
-                        <h3 class="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tighter uppercase">ABOUT <br> ME</h3>
-                        <p class="text-xl md:text-2xl font-bold text-white mb-6 leading-snug">
-                            Senior Video Editor and Audio Composer with over 10 years of professional experience.
-                        </p>
-                        <p class="text-gray-400 text-lg leading-relaxed">
-                            Specialized in storytelling through visuals and sound, with a strong eye for detail and a creative editing approach. I have a proven ability to deliver high-quality, impactful multimedia content that resonates with global audiences.
-                        </p>
+                        <div class="flex items-center gap-4 mb-8">
+                            <h2 class="text-4xl font-black tracking-tighter uppercase">TECH STACK</h2>
+                            <div class="h-px flex-grow bg-white/5"></div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-0">
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Adobe Premiere Pro</span>
+                                <i data-lucide="video" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Adobe After Effects</span>
+                                <i data-lucide="layers" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Adobe Illustrator</span>
+                                <i data-lucide="pen-tool" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Adobe Photoshop</span>
+                                <i data-lucide="image" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Image Line FL Studio</span>
+                                <i data-lucide="music" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <div class="scroll-animate lg:mt-10">
-                        <h2 class="text-xs font-black uppercase tracking-[0.5em] text-brand-500 mb-8">Software Stack</h2>
-                        <div class="flex flex-wrap gap-3">
-                            <div class="software-badge">Adobe After Effects</div>
-                            <div class="software-badge">Adobe Premiere Pro</div>
-                            <div class="software-badge">Adobe Illustrator</div>
-                            <div class="software-badge">Adobe Photoshop</div>
-                            <div class="software-badge">Cap Cut</div>
-                            <div class="software-badge">Steinberg Cubase</div>
-                            <div class="software-badge">FL Studio</div>
+
+                    <!-- AI Tools -->
+                    <div class="scroll-animate">
+                        <div class="flex items-center gap-4 mb-8">
+                            <h2 class="text-4xl font-black tracking-tighter uppercase">AI TOOLS</h2>
+                            <div class="h-px flex-grow bg-white/5"></div>
+                        </div>
+                        <div class="grid grid-cols-1 gap-0">
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Nano Banana</span>
+                                <i data-lucide="sparkles" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Kling AI / PixVerse</span>
+                                <i data-lucide="zap" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Higgsfield AI</span>
+                                <i data-lucide="brain-circuit" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Elevenlabs / Grok</span>
+                                <i data-lucide="mic" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                            <div class="software-grid-item">
+                                <span class="font-black uppercase tracking-widest text-sm">Dzine</span>
+                                <i data-lucide="wand-2" class="w-4 h-4 opacity-30"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- References Row -->
+                <div class="scroll-animate max-w-4xl">
+                    <div class="flex items-center gap-4 mb-12">
+                        <h2 class="text-4xl font-black tracking-tighter uppercase">REFERENCES</h2>
+                        <div class="h-px flex-grow bg-white/5"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                        <div class="group">
+                            <p class="text-brand-500 font-black text-[10px] tracking-[0.3em] uppercase mb-1">ROAR GLOBAL</p>
+                            <h4 class="text-base font-black uppercase group-hover:text-brand-500 transition-colors">Mustafa Kassim</h4>
+                            <p class="text-gray-600 font-bold text-[10px] uppercase mt-1 tracking-widest">Founder & CEO</p>
+                        </div>
+                        <div class="group">
+                            <p class="text-brand-500 font-black text-[10px] tracking-[0.3em] uppercase mb-1">MTV / NEWS 1ST</p>
+                            <h4 class="text-base font-black uppercase group-hover:text-brand-500 transition-colors">Sisil Ratnayake</h4>
+                            <p class="text-gray-600 font-bold text-[10px] uppercase mt-1 tracking-widest">Director</p>
+                        </div>
+                        <div class="group">
+                            <p class="text-brand-500 font-black text-[10px] tracking-[0.3em] uppercase mb-1">SATIS AGENCIES</p>
+                            <h4 class="text-base font-black uppercase group-hover:text-brand-500 transition-colors">Irfan Ahmed</h4>
+                            <p class="text-gray-600 font-bold text-[10px] uppercase mt-1 tracking-widest">Director</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Professional Journey - Complete List -->
-        <section id="experience" class="py-24 bg-dark-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                    <div class="lg:col-span-4 scroll-animate">
-                        <h2 class="text-6xl font-black mb-6 tracking-tighter uppercase leading-[0.8]">Professional <br><span class="text-brand-500">Journey</span></h2>
-                        <div class="h-1 w-20 bg-brand-500 mb-6"></div>
-                        <p class="text-gray-400 text-lg">A timeline of professional milestones across media, education, and corporate sectors.</p>
+        <!-- Works Grid -->
+        <section id="portfolio" class="py-32 bg-dark-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <a href="https://www.youtube.com/@ThanveerQuraishin1985" target="_blank" class="group relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[2rem] p-12 flex flex-col justify-end scroll-animate">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-5xl font-black uppercase relative z-10 transition-transform duration-500 group-hover:-translate-y-4">VIDEO<br>EDITS</h3>
+                        <p class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-white relative z-10">THE SHOWREEL</p>
+                    </a>
+
+                    <div class="group relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[2rem] p-12 flex flex-col justify-end scroll-animate">
+                        <div class="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-5xl font-black uppercase relative z-10 transition-transform duration-500 group-hover:-translate-y-4">GRAPHIC<br>DESIGNS</h3>
+                        <p class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-white relative z-10">VISUAL IDENTITY</p>
                     </div>
 
-                    <div class="lg:col-span-8 space-y-12 scroll-animate">
-                        <!-- Full Journey -->
-                        <div class="experience-card">
-                            <span class="text-brand-500 font-black text-xs tracking-[0.2em] uppercase">2024 - Present</span>
-                            <h3 class="text-2xl font-bold mt-1">Video Editor & Designer</h3>
-                            <p class="text-gray-400 font-medium text-base">Port City BPO / Aitken Spence</p>
-                            <p class="text-gray-500 text-sm mt-2">Leading visual content creation and digital design for corporate communications.</p>
-                        </div>
-                        <div class="experience-card">
-                            <span class="text-gray-500 font-black text-xs tracking-[0.2em] uppercase">2022 - 2024</span>
-                            <h3 class="text-2xl font-bold mt-1">Creative Lead</h3>
-                            <p class="text-gray-400 font-medium text-base">First Global Academy</p>
-                            <p class="text-gray-500 text-sm mt-2">Managed end-to-end creative direction and educational media production.</p>
-                        </div>
-                        <div class="experience-card">
-                            <span class="text-gray-500 font-black text-xs tracking-[0.2em] uppercase">2018 - 2021</span>
-                            <h3 class="text-2xl font-bold mt-1">Senior Video Editor</h3>
-                            <p class="text-gray-400 font-medium text-base">Roar Global</p>
-                            <p class="text-gray-500 text-sm mt-2">Crafted viral digital documentaries and brand stories for international audiences.</p>
-                        </div>
-                        <div class="experience-card">
-                            <span class="text-gray-500 font-black text-xs tracking-[0.2em] uppercase">2005 - 2008</span>
-                            <h3 class="text-2xl font-bold mt-1">Graphic Designer</h3>
-                            <p class="text-gray-400 font-medium text-base">Lake House (ANCL)</p>
-                            <p class="text-gray-500 text-sm mt-2">Specialized in layout design and print graphics for major national publications.</p>
-                        </div>
+                    <div class="group relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[2rem] p-12 flex flex-col justify-end scroll-animate">
+                        <div class="absolute inset-0 bg-gradient-to-t from-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <h3 class="text-5xl font-black uppercase relative z-10 transition-transform duration-500 group-hover:-translate-y-4">MUSIC<br>SCORES</h3>
+                        <p class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-white relative z-10">SOUND DESIGN</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portfolio Section - Revised Categories -->
-        <section id="portfolio" class="py-24 bg-dark-900 border-t border-white/5">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center mb-20 scroll-animate">
-                    <h2 class="text-6xl md:text-8xl font-black tracking-tighter uppercase">WORKS</h2>
-                    <p class="text-gray-500 uppercase tracking-widest text-xs mt-4">Selected Expertise</p>
-                </div>
+        <!-- Let's Talk Section - Updated to match reference image -->
+        <section id="contact" class="py-40 bg-dark-900 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-6 scroll-animate">
+                <h2 class="clamped-text text-7xl md:text-[11rem] font-black mb-20 uppercase">LET'S<br>TALK.</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Video -->
-                    <a href="https://www.youtube.com/@ThanveerQuraishin1985" target="_blank" class="group bg-dark-800 p-10 rounded-[2.5rem] border border-white/5 hover:border-brand-500/50 transition-all duration-500 scroll-animate h-full flex flex-col">
-                        <div class="w-14 h-14 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                <!-- Matching reference image image_f83c99.png -->
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-x-12 gap-y-6 pt-12 border-t border-white/10">
+                    <!-- Email Group -->
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-md bg-white flex items-center justify-center">
+                            <i data-lucide="mail" class="w-4 h-4 text-[#0f172a] fill-current"></i>
                         </div>
-                        <h3 class="text-3xl font-bold mb-3">Video Editing</h3>
-                        <p class="text-gray-400 text-base leading-relaxed mb-8">Professional visual storytelling with expertise in pacing, rhythm, and emotional impact.</p>
-                        <div class="mt-auto flex items-center gap-2 text-white font-black uppercase tracking-widest text-[10px]">
-                            Visit YouTube <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </div>
-                    </a>
-
-                    <!-- Graphic Design -->
-                    <div class="group bg-dark-800 p-10 rounded-[2.5rem] border border-white/5 transition-all duration-500 scroll-animate h-full flex flex-col">
-                        <div class="w-14 h-14 bg-brand-500/10 rounded-2xl flex items-center justify-center mb-8">
-                            <svg class="w-7 h-7 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 class="text-3xl font-bold mb-3">Graphic Design</h3>
-                        <p class="text-gray-400 text-base leading-relaxed mb-8">Strategic visual identity and brand assets designed for digital and print platforms.</p>
-                        <span class="mt-auto text-[9px] font-black uppercase tracking-widest text-gray-600">Visual Identity</span>
+                        <a href="mailto:thanveerquraishin@gmail.com" class="text-2xl md:text-3xl font-black uppercase tracking-tight hover:text-brand-500 transition-colors">
+                            thanveerquraishin@gmail.com
+                        </a>
                     </div>
 
-                    <!-- Music Composing -->
-                    <div class="group bg-dark-800 p-10 rounded-[2.5rem] border border-white/5 transition-all duration-500 scroll-animate h-full flex flex-col">
-                        <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-8">
-                            <svg class="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
-                        </div>
-                        <h3 class="text-3xl font-bold mb-3">Music Composing</h3>
-                        <p class="text-gray-400 text-base leading-relaxed mb-8">Original score composition and audio engineering for commercial and cinematic projects.</p>
-                        <span class="mt-auto text-[9px] font-black uppercase tracking-widest text-gray-600">Audio Engineering</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <!-- Vertical Separator (hidden on mobile) -->
+                    <div class="hidden md:block w-px h-10 bg-white/20"></div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-32 bg-dark-900 text-center relative overflow-hidden">
-            <div class="max-w-4xl mx-auto px-4 scroll-animate">
-                <h2 class="text-xs font-black uppercase tracking-[0.5em] text-brand-500 mb-6">Available for Projects</h2>
-                <h3 class="text-5xl md:text-7xl font-black mb-12 tracking-tighter uppercase">Let's Talk</h3>
-                <div class="flex flex-col md:flex-row justify-center items-center gap-10">
-                    <a href="mailto:thanveerquraishin@gmail.com" class="text-xl md:text-2xl font-bold hover:text-brand-500 transition-colors flex items-center gap-4">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        thanveerquraishin@gmail.com
-                    </a>
-                    <div class="hidden md:block w-px h-8 bg-white/20"></div>
-                    <a href="https://wa.me/94777436116" target="_blank" class="text-xl md:text-2xl font-bold hover:text-green-500 transition-colors flex items-center gap-4 group">
-                        <svg class="w-8 h-8 fill-current text-green-500 group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.412.001 12.049a11.823 11.823 0 001.592 5.961L0 24l6.117-1.605a11.803 11.803 0 005.925 1.577h.005c6.637 0 12.046-5.411 12.049-12.049.003-3.218-1.251-6.243-3.535-8.527"/></svg>
-                        +94 777 436 116
-                    </a>
+                    <!-- WhatsApp Group -->
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 rounded-md bg-[#25D366] flex items-center justify-center">
+                            <i data-lucide="phone" class="w-4 h-4 text-white fill-current"></i>
+                        </div>
+                        <a href="https://wa.me/94777436116" target="_blank" class="text-2xl md:text-3xl font-black uppercase tracking-tight hover:text-brand-500 transition-colors">
+                            +94 777 436 116
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-10 bg-dark-900 border-t border-white/5 text-center">
-        <p class="text-[9px] font-black uppercase tracking-[0.4em] text-gray-600">
-            &copy; <span id="year"></span> THANVEER QURAISHIN &bull; ALL RIGHTS RESERVED
+    <footer class="py-16 bg-dark-900 border-t border-white/5 text-center">
+        <p class="text-[10px] font-black uppercase tracking-[0.6em] text-gray-800">
+            THANVEER QURAISHIN &bull; THE STORYTELLER &bull; EST 1985
         </p>
     </footer>
 
@@ -366,7 +438,7 @@
                 img.alt = logo.alt;
                 img.className = 'client-logo';
                 img.onerror = () => {
-                    div.innerHTML = `<span class="text-xl font-black text-gray-600 uppercase tracking-widest">${logo.alt}</span>`;
+                    div.innerHTML = `<span class="text-[10px] font-black text-gray-700 uppercase tracking-widest">${logo.alt}</span>`;
                 };
                 div.appendChild(img);
                 container.appendChild(div);
@@ -376,7 +448,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderLogos('logo-container-1');
             renderLogos('logo-container-2');
-            document.getElementById('year').textContent = new Date().getFullYear();
+            lucide.createIcons();
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
