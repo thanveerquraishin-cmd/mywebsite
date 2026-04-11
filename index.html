@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanveer Quraishin | Video Editor Portfolio</title>
+    <title>Thanveer Quraishin | The Storyteller</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         window.tailwind.config = {
@@ -55,26 +55,24 @@
             transform: translateY(0) !important;
         }
 
-        /* Updated Logo Slider Styling - Bigger and formatted for 6 items */
         .logo-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            /* width is roughly 1/6th of a standard widescreen to show 6 at once */
             min-width: 16.66vw; 
             height: 180px;   
             padding: 0 40px;
         }
 
         @media (max-width: 1024px) {
-            .logo-item { min-width: 25vw; } /* 4 items on tablets */
+            .logo-item { min-width: 25vw; }
         }
         @media (max-width: 640px) {
-            .logo-item { min-width: 50vw; } /* 2 items on mobile */
+            .logo-item { min-width: 50vw; }
         }
 
         .client-logo {
-            max-height: 110px; /* Increased size */
+            max-height: 110px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
@@ -95,6 +93,22 @@
             text-transform: uppercase;
             text-align: center;
         }
+
+        .experience-card {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(99, 102, 241, 0.2);
+        }
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: #6366f1;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body class="bg-dark-900 text-white font-sans selection:bg-brand-500 selection:text-white">
@@ -112,10 +126,19 @@
 
                 <nav class="hidden md:flex space-x-8">
                     <a href="#home" class="text-sm font-medium text-gray-300 hover:text-brand-500 transition-colors">Home</a>
-                    <a href="#about" class="text-sm font-medium text-gray-300 hover:text-brand-500 transition-colors">About</a>
+                    <a href="#experience" class="text-sm font-medium text-gray-300 hover:text-brand-500 transition-colors">Experience</a>
                     <a href="#portfolio" class="text-sm font-medium text-gray-300 hover:text-brand-500 transition-colors">Portfolio</a>
                     <a href="#contact" class="text-sm font-medium text-gray-300 hover:text-brand-500 transition-colors">Contact</a>
                 </nav>
+
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://www.facebook.com/ThanveerQuraishin/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/thanweer-quraishin-71094819/" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
 
                 <button class="md:hidden p-2 text-gray-400 hover:text-white transition-colors">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -130,21 +153,21 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <div class="fade-in">
                     <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-brand-500 uppercase bg-brand-500/10 rounded-full border border-brand-500/20">
-                        Professional Video Editor
+                        Professional Video Editor & Graphic Designer
                     </span>
                     <h1 class="text-5xl md:text-7xl lg:text-9xl font-black mb-6 tracking-tight leading-[0.9]">
-                        Vision <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-purple-400">Perfected</span>
+                        The <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-purple-400">Storyteller</span>
                     </h1>
-                    <p class="mt-4 text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-light">
-                        Premium video editing and storytelling for brands that demand excellence. 
+                    <p class="mt-4 text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                        Transforming raw footage into cinematic narratives. Over 15 years of shaping visual identities for leading global and local brands.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-                        <a href="https://www.youtube.com/@ThanveerQuraishin1985" target="_blank" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white rounded-full font-medium transition-all shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                            YouTube Channel
+                        <a href="https://wa.me/94777436116" target="_blank" class="px-8 py-4 bg-[#25D366] hover:brightness-110 text-white rounded-full font-bold transition-all shadow-lg flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.448 0 9.886-4.438 9.888-9.886.002-5.447-4.435-9.887-9.888-9.887-5.447 0-9.886 4.438-9.888 9.886-.001 2.145.551 4.115 1.602 5.869l-.955 3.486 3.56-.933zm9.867-5.6c-.285-.143-1.684-.832-1.945-.928-.262-.095-.452-.143-.642.143-.19.285-.736.928-.903 1.12-.166.19-.332.214-.618.071-.285-.143-1.204-.444-2.293-1.415-.848-.756-1.42-1.689-1.586-1.974-.166-.285-.018-.439.124-.581.128-.127.285-.333.428-.5.143-.166.19-.285.285-.476.095-.19.048-.357-.024-.5-.071-.143-.642-1.545-.879-2.117-.231-.557-.465-.48-.642-.489-.166-.008-.356-.01-.546-.01-.19 0-.5.071-.76.357-.262.285-.998.976-.998 2.38s1.022 2.76 1.165 2.95c.143.19 2.012 3.073 4.873 4.312.68.295 1.212.47 1.626.601.683.216 1.305.186 1.797.112.548-.082 1.684-.689 1.921-1.355.238-.666.238-1.237.166-1.355-.071-.118-.262-.19-.546-.332z"/></svg>
+                            WhatsApp Me
                         </a>
-                        <a href="#portfolio" class="px-8 py-4 bg-transparent border border-gray-600 hover:border-gray-400 text-white rounded-full font-medium transition-all flex items-center justify-center">
+                        <a href="#portfolio" class="px-8 py-4 bg-transparent border border-gray-600 hover:border-brand-500 hover:text-brand-500 rounded-full font-medium transition-all flex items-center justify-center">
                             View Portfolio
                         </a>
                     </div>
@@ -153,81 +176,145 @@
         </section>
 
         <!-- Brand Logo Slider -->
-        <section class="py-24 bg-dark-900 border-y border-gray-800/50 overflow-hidden">
-            <div class="max-w-7xl mx-auto px-4 mb-14 text-center">
-                <p class="text-gray-500 text-[11px] font-bold uppercase tracking-[0.6em] opacity-80">Trusted by Global Industry Leaders</p>
-            </div>
+        <section class="py-20 bg-dark-900 border-y border-gray-800/50 overflow-hidden">
             <div class="flex w-full overflow-hidden">
                 <div class="flex animate-infinite-scroll whitespace-nowrap items-center">
-                    <!-- Set 1 -->
-                    <div class="flex items-center" id="logo-container-1">
-                        <!-- Logos populated via JS -->
+                    <div class="flex items-center" id="logo-container-1"></div>
+                    <div class="flex items-center" id="logo-container-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-32 bg-dark-800 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                    <div class="lg:col-span-4 scroll-animate">
+                        <h2 class="text-6xl font-black mb-8 tracking-tighter uppercase leading-none">Work <br><span class="text-brand-500">History</span></h2>
+                        <p class="text-gray-400 text-lg mb-10">A journey through leading media houses and creative agencies, delivering excellence across every frame.</p>
+                        
+                        <!-- Socials -->
+                        <div class="flex gap-4">
+                            <a href="https://www.facebook.com/ThanveerQuraishin/" target="_blank" class="w-12 h-12 rounded-xl bg-dark-900 border border-gray-700 flex items-center justify-center hover:border-brand-500 hover:text-brand-500 transition-all">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/thanweer-quraishin-71094819/" target="_blank" class="w-12 h-12 rounded-xl bg-dark-900 border border-gray-700 flex items-center justify-center hover:border-brand-500 hover:text-brand-500 transition-all">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                        </div>
                     </div>
-                    <!-- Duplicate Set for continuous loop -->
-                    <div class="flex items-center" id="logo-container-2">
-                        <!-- Logos populated via JS -->
+
+                    <div class="lg:col-span-8 space-y-12 scroll-animate">
+                        <!-- Experience Items -->
+                        <div class="experience-card">
+                            <span class="text-brand-500 font-bold text-sm tracking-widest uppercase">2024 - Current</span>
+                            <h3 class="text-2xl font-bold mt-2">Video Editor | Graphic Designer</h3>
+                            <p class="text-gray-300 font-medium">Port City BPO, Aitken Spence</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2022 - 2024</span>
+                            <h3 class="text-2xl font-bold mt-2">Video Editor | Graphic Designer</h3>
+                            <p class="text-gray-300 font-medium">First Global Academy, Colombo 8</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2021 - 2022</span>
+                            <h3 class="text-2xl font-bold mt-2">Executive Senior Video Editor</h3>
+                            <p class="text-gray-300 font-medium">Vibe Television, Colombo 5</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2018 - 2021</span>
+                            <h3 class="text-2xl font-bold mt-2">Senior Video Editor</h3>
+                            <p class="text-gray-300 font-medium">Roar Global, Colombo 3</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2011 - 2018</span>
+                            <h3 class="text-2xl font-bold mt-2">Video Editor | Graphic Designer</h3>
+                            <p class="text-gray-300 font-medium">D Studio CMB, Battaramulla</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2010 - 2011</span>
+                            <h3 class="text-2xl font-bold mt-2">Graphic Designer</h3>
+                            <p class="text-gray-300 font-medium">Uthum Pathum, Colombo 8</p>
+                        </div>
+
+                        <div class="experience-card">
+                            <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2005 - 2008</span>
+                            <h3 class="text-2xl font-bold mt-2">Graphic Designer</h3>
+                            <p class="text-gray-300 font-medium">Associated Newspapers of Ceylon Ltd (Lake House), Colombo 1</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="py-32 bg-dark-800">
+        <section id="portfolio" class="py-32 bg-dark-900">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-4xl mx-auto mb-24 scroll-animate">
                     <h2 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter uppercase">My <span class="text-brand-500">Portfolio</span></h2>
-                    <p class="text-gray-500 text-xl font-light">A showcase of high-impact visual storytelling and design.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-                    <a href="https://www.youtube.com/@ThanveerQuraishin1985" target="_blank" class="bg-dark-900 p-10 rounded-[2.5rem] border border-gray-800 hover:border-brand-500/50 hover:bg-dark-900/50 transition-all duration-500 group scroll-animate block">
-                        <div class="w-16 h-16 bg-gray-800/50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-500/10 transition-colors">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <!-- Video Box -->
+                    <a href="https://www.youtube.com/@ThanveerQuraishin1985" target="_blank" class="bg-dark-800 p-10 rounded-[2.5rem] border border-gray-700 hover:border-brand-500/50 hover:bg-dark-800/50 transition-all duration-500 group scroll-animate block h-full">
+                        <div class="w-16 h-16 bg-gray-700/50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-500/10 transition-colors">
                             <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         </div>
                         <h3 class="text-4xl font-bold mb-4">Videos</h3>
-                        <p class="text-gray-400 text-lg leading-relaxed mb-8">Professional video production, cinematic reels, and commercial storytelling for global audiences.</p>
-                        <div class="flex items-center gap-3 text-brand-500 font-black uppercase tracking-widest text-sm">
+                        <p class="text-gray-400 text-lg leading-relaxed mb-8">Premium video production across documentary, commercial, and broadcast formats.</p>
+                        <div class="flex items-center gap-3 text-brand-500 font-black uppercase tracking-widest text-sm mt-auto">
                             View on YouTube 
                             <svg class="w-5 h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </div>
                     </a>
 
-                    <div class="bg-dark-900 p-10 rounded-[2.5rem] border border-gray-800 hover:border-brand-500/50 hover:bg-dark-900/50 transition-all duration-500 group scroll-animate">
-                        <div class="w-16 h-16 bg-gray-800/50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-500/10 transition-colors">
+                    <!-- Graphics Box -->
+                    <div class="bg-dark-800 p-10 rounded-[2.5rem] border border-gray-700 hover:border-brand-500/50 hover:bg-dark-800/50 transition-all duration-500 group scroll-animate h-full">
+                        <div class="w-16 h-16 bg-gray-700/50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-500/10 transition-colors">
                             <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         </div>
                         <h3 class="text-4xl font-bold mb-4">Graphics</h3>
-                        <p class="text-gray-400 text-lg leading-relaxed mb-8">High-conversion thumbnails, brand identity, and social media creative assets.</p>
-                        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark-800 text-gray-500 text-[10px] font-black uppercase tracking-widest">In Development</span>
+                        <p class="text-gray-400 text-lg leading-relaxed mb-8">From newspaper design to digital branding and high-impact thumbnails.</p>
+                        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark-900 text-gray-500 text-[10px] font-black uppercase tracking-widest">In Development</span>
+                    </div>
+
+                    <!-- Music Box (New) -->
+                    <div class="bg-dark-800 p-10 rounded-[2.5rem] border border-gray-700 hover:border-brand-500/50 hover:bg-dark-800/50 transition-all duration-500 group scroll-animate h-full">
+                        <div class="w-16 h-16 bg-gray-700/50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-500/10 transition-colors">
+                            <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
+                        </div>
+                        <h3 class="text-4xl font-bold mb-4">Music</h3>
+                        <p class="text-gray-400 text-lg leading-relaxed mb-8">Original compositions and professional audio engineering for digital media.</p>
+                        <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark-900 text-gray-500 text-[10px] font-black uppercase tracking-widest">Coming Soon</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-32 bg-dark-900 border-t border-gray-800/50">
+        <!-- References Section -->
+        <section class="py-32 bg-dark-800 border-t border-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <div class="relative scroll-animate">
-                        <div class="absolute inset-0 bg-brand-500 rounded-3xl transform translate-x-6 translate-y-6 opacity-5"></div>
-                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Workspace" class="relative rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 aspect-square object-cover">
+                <h2 class="text-4xl font-bold mb-16 text-center scroll-animate">Professional <span class="text-brand-500">References</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="p-8 bg-dark-900 rounded-3xl border border-gray-700 scroll-animate">
+                        <h4 class="text-xl font-bold">Mustafa Kassim</h4>
+                        <p class="text-brand-500 text-xs font-bold uppercase mt-1 tracking-widest">Founder</p>
+                        <p class="text-gray-500 mt-4 text-sm font-medium">Roar Global</p>
                     </div>
-                    <div class="scroll-animate">
-                        <h2 class="text-5xl font-bold mb-8">Mastering the <br><span class="text-brand-500">Visual Narrative</span></h2>
-                        <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
-                            <p>I'm Thanveer Quraishin. With over 10 years of experience, I bridge the gap between technical expertise and creative vision.</p>
-                            <p>My journey includes high-stakes collaborations with <strong>Lake House (ANCL)</strong>, <strong>Roar Media</strong>, and <strong>YFM</strong>, where I've delivered content that defines brand identities.</p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-10 mt-12">
-                            <div>
-                                <div class="text-4xl font-black text-white mb-1">10+</div>
-                                <div class="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-bold">Years of Mastery</div>
-                            </div>
-                            <div>
-                                <div class="text-4xl font-black text-white mb-1">15+</div>
-                                <div class="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-bold">Premium Clients</div>
-                            </div>
-                        </div>
+                    <div class="p-8 bg-dark-900 rounded-3xl border border-gray-700 scroll-animate">
+                        <h4 class="text-xl font-bold">Sisil Ratnayake</h4>
+                        <p class="text-brand-500 text-xs font-bold uppercase mt-1 tracking-widest">Director</p>
+                        <p class="text-gray-500 mt-4 text-sm font-medium">News 1st | MTV Channel</p>
+                    </div>
+                    <div class="p-8 bg-dark-900 rounded-3xl border border-gray-700 scroll-animate">
+                        <h4 class="text-xl font-bold">Irfan Ahmed</h4>
+                        <p class="text-brand-500 text-xs font-bold uppercase mt-1 tracking-widest">Director</p>
+                        <p class="text-gray-500 mt-4 text-sm font-medium">Satis Agencies</p>
                     </div>
                 </div>
             </div>
@@ -237,12 +324,20 @@
         <section id="contact" class="py-32 bg-dark-900 relative overflow-hidden">
             <div class="absolute inset-0 hero-gradient opacity-30"></div>
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center scroll-animate">
-                <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter">Elevate Your Story</h2>
-                <p class="text-xl text-gray-500 mb-12 font-light">Available for select projects and professional collaborations.</p>
-                <a href="mailto:thanveerquraishin@gmail.com" class="inline-flex items-center gap-3 px-12 py-6 bg-brand-600 hover:bg-brand-500 text-white rounded-full font-bold transition-all shadow-2xl shadow-brand-500/40 text-xl group">
-                    thanveerquraishin@gmail.com
-                    <svg class="w-6 h-6 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                </a>
+                <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter uppercase">Let's Create</h2>
+                <p class="text-xl text-gray-400 mb-12 font-light">Bring your vision to life with professional editing and design.</p>
+                
+                <div class="flex flex-col items-center gap-6">
+                    <a href="mailto:thanveerquraishin@gmail.com" class="text-3xl md:text-5xl font-bold text-white hover:text-brand-500 transition-colors break-all">
+                        thanveerquraishin@gmail.com
+                    </a>
+                    <a href="https://wa.me/94777436116" target="_blank" class="flex items-center gap-4 px-8 py-4 bg-dark-800 border border-gray-700 rounded-full hover:border-brand-500 transition-all group">
+                        <span class="text-xl font-bold">+94 777 436 116</span>
+                        <div class="w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
@@ -254,6 +349,11 @@
                 <div class="w-10 h-10 rounded bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center font-bold text-lg">TQ</div>
                 <span class="font-bold text-xl tracking-tighter">Thanveer Quraishin</span>
             </div>
+            <div class="flex gap-6">
+                <a href="https://www.facebook.com/ThanveerQuraishin/" target="_blank" class="text-gray-500 hover:text-white transition-colors">Facebook</a>
+                <a href="https://www.linkedin.com/in/thanweer-quraishin-71094819/" target="_blank" class="text-gray-500 hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://wa.me/94777436116" target="_blank" class="text-gray-500 hover:text-white transition-colors">WhatsApp</a>
+            </div>
             <div class="text-gray-600 text-[10px] font-bold uppercase tracking-[0.4em]">
                 &copy; <span id="year"></span> &bull; Crafted for Excellence
             </div>
@@ -261,7 +361,6 @@
     </footer>
 
     <script>
-        // Updated with newly uploaded white/transparent assets
         const logos = [
             { src: 'AICPA.png', alt: 'AICPA' },
             { src: 'RoarMedia.png', alt: 'Roar Media' },
