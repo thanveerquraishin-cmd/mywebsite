@@ -20,7 +20,7 @@
                         }
                     },
                     animation: {
-                        'infinite-scroll': 'infinite-scroll 40s linear infinite',
+                        'infinite-scroll': 'infinite-scroll 35s linear infinite',
                     },
                     keyframes: {
                         'infinite-scroll': {
@@ -39,12 +39,11 @@
         }
         .fade-in { animation: fadeIn 0.8s ease-out forwards; }
         
-        /* Hero background with optimized positioning */
         .hero-bg {
             background-color: #0f172a; 
-            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.98)), url('IMG.gif');
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 1)), url('IMG.gif');
             background-size: cover;
-            background-position: center 30%; /* Shifted slightly to ensure face visibility */
+            background-position: center 30%;
             background-repeat: no-repeat;
         }
 
@@ -59,27 +58,27 @@
             transform: translateY(0) !important;
         }
 
-        /* Updated logo sizing to be significantly bigger */
+        /* Significantly enlarged logo containers */
         .logo-item {
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 250px; 
-            padding: 0 40px; 
+            min-width: 380px; /* Wider footprint for bigger logos */
+            padding: 0 60px; 
         }
 
         .client-logo {
-            max-height: 80px; 
+            max-height: 140px; /* Increased from 80px for massive visibility */
             width: auto;
-            opacity: 0.7;
-            filter: grayscale(1) brightness(1.2);
+            opacity: 0.8;
+            filter: grayscale(1) brightness(1.5);
             transition: all 0.4s ease;
         }
         
         .logo-item:hover .client-logo {
             opacity: 1;
             filter: grayscale(0) brightness(1);
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
 
         .experience-card {
@@ -98,19 +97,19 @@
             border-radius: 50%;
         }
 
-        /* Tightest line height for the punchy name */
         .big-punch-text {
             line-height: 0.72; 
             letter-spacing: -0.06em;
         }
 
-        /* Updated highlighter for the storyteller text */
+        /* Dark Purple Highlighter with White Text */
         .highlight-tag {
-            background: #312e81; /* Deep Purple */
+            background: #312e81; 
+            color: #ffffff;
             backdrop-filter: blur(8px);
-            padding: 0.2em 0.6em;
-            border-radius: 0.3em;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.15em 0.5em;
+            border-radius: 0.2em;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -147,21 +146,19 @@
         <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg pt-40 sm:pt-56 pb-12">
             <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
                 <div class="fade-in">
-                    <!-- Name Title with tightest spacing -->
                     <h1 class="big-punch-text text-6xl sm:text-8xl md:text-9xl lg:text-[11rem] font-black mb-4 drop-shadow-2xl">
                         THANVEER <br>
                         <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">QURAISHIN</span>
                     </h1>
                     
-                    <!-- Subtitle with Dark Purple Highlighter -->
-                    <div class="mb-6">
-                        <h2 class="inline-block text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-lg highlight-tag">
+                    <div class="mb-10">
+                        <h2 class="inline-block text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight drop-shadow-lg highlight-tag">
                             The Storyteller
                         </h2>
                     </div>
 
                     <p class="mt-0 text-base md:text-lg text-gray-300 mb-8 max-w-xl mx-auto font-medium leading-relaxed drop-shadow-md px-4 opacity-90">
-                        Video Editor & Graphic Designer with 15+ years of experience crafting visual narratives that resonate globally.
+                        Visual Narrative Specialist & Multi-Disciplinary Designer with nearly two decades of global creative expertise.
                     </p>
                     
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -174,12 +171,11 @@
                     </div>
                 </div>
             </div>
-            <!-- Bottom Vignette -->
-            <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-dark-900 via-dark-900/60 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent"></div>
         </section>
 
-        <!-- Brand Logo Slider - Bigger Logos -->
-        <section class="py-16 bg-dark-900 border-y border-white/5 overflow-hidden">
+        <!-- Enlarged Logo Slider -->
+        <section class="py-24 bg-dark-900 border-y border-white/5 overflow-hidden">
             <div class="flex w-full overflow-hidden">
                 <div class="flex animate-infinite-scroll whitespace-nowrap items-center">
                     <div class="flex items-center" id="logo-container-1"></div>
@@ -195,7 +191,7 @@
                     <div class="lg:col-span-5 scroll-animate">
                         <h2 class="text-6xl font-black mb-6 tracking-tighter uppercase leading-[0.8]">Professional <br><span class="text-brand-500">Journey</span></h2>
                         <div class="h-1 w-20 bg-brand-500 mb-6"></div>
-                        <p class="text-gray-400 text-lg leading-relaxed">From the printing presses of Lake House to the digital forefront at Roar Global, I've spent nearly two decades mastering the art of visual communication.</p>
+                        <p class="text-gray-400 text-lg leading-relaxed">From the printing legacy of Lake House to the cutting-edge digital storytelling at Roar Global, my career spans the evolution of media.</p>
                     </div>
 
                     <div class="lg:col-span-7 space-y-10 scroll-animate">
@@ -210,19 +206,9 @@
                             <p class="text-gray-400 font-medium text-base">First Global Academy</p>
                         </div>
                         <div class="experience-card">
-                            <span class="text-gray-500 font-black text-xs tracking-[0.2em] uppercase">2021 - 2022</span>
-                            <h3 class="text-2xl font-bold mt-1">Exec. Senior Video Editor</h3>
-                            <p class="text-gray-400 font-medium text-base">Vibe Television</p>
-                        </div>
-                        <div class="experience-card">
                             <span class="text-gray-500 font-black text-xs tracking-[0.2em] uppercase">2018 - 2021</span>
                             <h3 class="text-2xl font-bold mt-1">Senior Video Editor</h3>
                             <p class="text-gray-400 font-medium text-base">Roar Global</p>
-                        </div>
-                        <div class="experience-card">
-                            <span class="text-gray-500 font-black text-xs tracking-[0.2em] uppercase">2011 - 2018</span>
-                            <h3 class="text-2xl font-bold mt-1">Editor & Designer</h3>
-                            <p class="text-gray-400 font-medium text-base">D Studio CMB</p>
                         </div>
                         <div class="experience-card">
                             <span class="text-gray-500 font-black text-xs tracking-[0.2em] uppercase">2005 - 2008</span>
@@ -239,14 +225,14 @@
             <div class="max-w-7xl mx-auto px-4 text-center">
                 <h2 class="text-6xl md:text-8xl font-black mb-16 tracking-tighter uppercase scroll-animate">WORKS</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                     <!-- YouTube -->
                     <a href="https://www.youtube.com/@ThanveerQuraishin1985" target="_blank" class="group bg-dark-800 p-10 rounded-[2.5rem] border border-white/5 hover:border-brand-500/50 transition-all duration-500 scroll-animate h-full flex flex-col">
                         <div class="w-14 h-14 bg-red-600/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                             <svg class="w-7 h-7 text-red-500" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                         </div>
                         <h3 class="text-3xl font-bold mb-3">Video Production</h3>
-                        <p class="text-gray-400 text-base leading-relaxed mb-8">High-end video editing, color grading, and storytelling for digital brands.</p>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">Professional storytelling through rhythm, pacing, and visual style.</p>
                         <div class="mt-auto flex items-center gap-2 text-white font-black uppercase tracking-widest text-[10px]">
                             Visit Channel <svg class="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </div>
@@ -257,9 +243,9 @@
                         <div class="w-14 h-14 bg-brand-500/10 rounded-2xl flex items-center justify-center mb-8">
                             <svg class="w-7 h-7 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                         </div>
-                        <h3 class="text-3xl font-bold mb-3">Graphic Design</h3>
-                        <p class="text-gray-400 text-base leading-relaxed mb-8">Editorial design, social media kits, and brand identity systems.</p>
-                        <span class="mt-auto text-[9px] font-black uppercase tracking-widest text-gray-600">Archiving Work...</span>
+                        <h3 class="text-3xl font-bold mb-3">Visual Design</h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">Corporate branding and digital marketing assets for top-tier companies.</p>
+                        <span class="mt-auto text-[9px] font-black uppercase tracking-widest text-gray-600">Global Portfolio</span>
                     </div>
 
                     <!-- Audio -->
@@ -267,28 +253,28 @@
                         <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-8">
                             <svg class="w-7 h-7 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
                         </div>
-                        <h3 class="text-3xl font-bold mb-3">Music Production</h3>
-                        <p class="text-gray-400 text-base leading-relaxed mb-8">Custom soundscapes and audio engineering for commercial media.</p>
-                        <span class="mt-auto text-[9px] font-black uppercase tracking-widest text-gray-600">Coming Soon</span>
+                        <h3 class="text-3xl font-bold mb-3">Soundscapes</h3>
+                        <p class="text-gray-400 text-base leading-relaxed mb-8">Immersive audio production and engineering for commercial projects.</p>
+                        <span class="mt-auto text-[9px] font-black uppercase tracking-widest text-gray-600">Creative Sound</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section with WhatsApp Icon -->
         <section id="contact" class="py-32 bg-dark-900 text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto px-4 scroll-animate">
-                <h2 class="text-xs font-black uppercase tracking-[0.5em] text-brand-500 mb-6">Available for Projects</h2>
-                <h3 class="text-5xl md:text-7xl font-black mb-10 tracking-tighter uppercase">Let's Talk</h3>
-                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                    <a href="mailto:thanveerquraishin@gmail.com" class="text-xl font-bold hover:text-brand-500 transition-colors flex items-center gap-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <h2 class="text-xs font-black uppercase tracking-[0.5em] text-brand-500 mb-6">Open for Collaborations</h2>
+                <h3 class="text-5xl md:text-7xl font-black mb-12 tracking-tighter uppercase">Let's Talk</h3>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-10">
+                    <a href="mailto:thanveerquraishin@gmail.com" class="text-xl md:text-2xl font-bold hover:text-brand-500 transition-colors flex items-center gap-4">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         thanveerquraishin@gmail.com
                     </a>
-                    <div class="hidden md:block w-px h-6 bg-white/20"></div>
-                    <a href="https://wa.me/94777436116" target="_blank" class="text-xl font-bold hover:text-green-500 transition-colors flex items-center gap-3">
-                        <!-- WhatsApp Icon -->
-                        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.412.001 12.049a11.823 11.823 0 001.592 5.961L0 24l6.117-1.605a11.803 11.803 0 005.925 1.577h.005c6.637 0 12.046-5.411 12.049-12.049.003-3.218-1.251-6.243-3.535-8.527"/></svg>
+                    <div class="hidden md:block w-px h-8 bg-white/20"></div>
+                    <a href="https://wa.me/94777436116" target="_blank" class="text-xl md:text-2xl font-bold hover:text-green-500 transition-colors flex items-center gap-4 group">
+                        <!-- WhatsApp SVG -->
+                        <svg class="w-8 h-8 fill-current text-green-500 group-hover:scale-110 transition-transform" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .004 5.412.001 12.049a11.823 11.823 0 001.592 5.961L0 24l6.117-1.605a11.803 11.803 0 005.925 1.577h.005c6.637 0 12.046-5.411 12.049-12.049.003-3.218-1.251-6.243-3.535-8.527"/></svg>
                         +94 777 436 116
                     </a>
                 </div>
@@ -327,7 +313,7 @@
                 img.alt = logo.alt;
                 img.className = 'client-logo';
                 img.onerror = () => {
-                    div.innerHTML = `<span class="text-lg font-black text-gray-500 uppercase tracking-widest">${logo.alt}</span>`;
+                    div.innerHTML = `<span class="text-2xl font-black text-gray-600 uppercase tracking-widest">${logo.alt}</span>`;
                 };
                 div.appendChild(img);
                 container.appendChild(div);
