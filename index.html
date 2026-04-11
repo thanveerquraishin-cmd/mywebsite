@@ -39,9 +39,13 @@
         }
         .fade-in { animation: fadeIn 0.8s ease-out forwards; }
         
-        .hero-gradient {
-            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
-                        radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.1), transparent);
+        /* Updated Hero background to use the smaller IMG.gif */
+        .hero-bg {
+            background-color: #0f172a; 
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.95)), url('IMG.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .scroll-animate {
@@ -149,16 +153,16 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden hero-gradient">
+        <section id="home" class="relative min-h-[90vh] flex items-center justify-center pt-20 overflow-hidden hero-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <div class="fade-in">
-                    <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-brand-500 uppercase bg-brand-500/10 rounded-full border border-brand-500/20">
+                    <span class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-brand-500 uppercase bg-brand-500/20 backdrop-blur-sm rounded-full border border-brand-500/30">
                         Professional Video Editor & Graphic Designer
                     </span>
-                    <h1 class="text-5xl md:text-7xl lg:text-9xl font-black mb-6 tracking-tight leading-[0.9]">
+                    <h1 class="text-5xl md:text-7xl lg:text-9xl font-black mb-6 tracking-tight leading-[0.9] drop-shadow-2xl">
                         The <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-purple-400">Storyteller</span>
                     </h1>
-                    <p class="mt-4 text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                    <p class="mt-4 text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md">
                         Transforming raw footage into cinematic narratives. Over 15 years of shaping visual identities for leading global and local brands.
                     </p>
                     
@@ -167,12 +171,14 @@
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.448 0 9.886-4.438 9.888-9.886.002-5.447-4.435-9.887-9.888-9.887-5.447 0-9.886 4.438-9.888 9.886-.001 2.145.551 4.115 1.602 5.869l-.955 3.486 3.56-.933zm9.867-5.6c-.285-.143-1.684-.832-1.945-.928-.262-.095-.452-.143-.642.143-.19.285-.736.928-.903 1.12-.166.19-.332.214-.618.071-.285-.143-1.204-.444-2.293-1.415-.848-.756-1.42-1.689-1.586-1.974-.166-.285-.018-.439.124-.581.128-.127.285-.333.428-.5.143-.166.19-.285.285-.476.095-.19.048-.357-.024-.5-.071-.143-.642-1.545-.879-2.117-.231-.557-.465-.48-.642-.489-.166-.008-.356-.01-.546-.01-.19 0-.5.071-.76.357-.262.285-.998.976-.998 2.38s1.022 2.76 1.165 2.95c.143.19 2.012 3.073 4.873 4.312.68.295 1.212.47 1.626.601.683.216 1.305.186 1.797.112.548-.082 1.684-.689 1.921-1.355.238-.666.238-1.237.166-1.355-.071-.118-.262-.19-.546-.332z"/></svg>
                             WhatsApp Me
                         </a>
-                        <a href="#portfolio" class="px-8 py-4 bg-transparent border border-gray-600 hover:border-brand-500 hover:text-brand-500 rounded-full font-medium transition-all flex items-center justify-center">
+                        <a href="#portfolio" class="px-8 py-4 bg-dark-900/40 backdrop-blur-md border border-gray-400/50 hover:border-brand-500 hover:text-brand-500 rounded-full font-medium transition-all flex items-center justify-center">
                             View Portfolio
                         </a>
                     </div>
                 </div>
             </div>
+            <!-- Bottom Fade -->
+            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-dark-900 to-transparent"></div>
         </section>
 
         <!-- Brand Logo Slider -->
@@ -211,37 +217,31 @@
                             <h3 class="text-2xl font-bold mt-2">Video Editor | Graphic Designer</h3>
                             <p class="text-gray-300 font-medium">Port City BPO, Aitken Spence</p>
                         </div>
-
                         <div class="experience-card">
                             <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2022 - 2024</span>
                             <h3 class="text-2xl font-bold mt-2">Video Editor | Graphic Designer</h3>
                             <p class="text-gray-300 font-medium">First Global Academy, Colombo 8</p>
                         </div>
-
                         <div class="experience-card">
                             <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2021 - 2022</span>
                             <h3 class="text-2xl font-bold mt-2">Executive Senior Video Editor</h3>
                             <p class="text-gray-300 font-medium">Vibe Television, Colombo 5</p>
                         </div>
-
                         <div class="experience-card">
                             <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2018 - 2021</span>
                             <h3 class="text-2xl font-bold mt-2">Senior Video Editor</h3>
                             <p class="text-gray-300 font-medium">Roar Global, Colombo 3</p>
                         </div>
-
                         <div class="experience-card">
                             <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2011 - 2018</span>
                             <h3 class="text-2xl font-bold mt-2">Video Editor | Graphic Designer</h3>
                             <p class="text-gray-300 font-medium">D Studio CMB, Battaramulla</p>
                         </div>
-
                         <div class="experience-card">
                             <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2010 - 2011</span>
                             <h3 class="text-2xl font-bold mt-2">Graphic Designer</h3>
                             <p class="text-gray-300 font-medium">Uthum Pathum, Colombo 8</p>
                         </div>
-
                         <div class="experience-card">
                             <span class="text-gray-500 font-bold text-sm tracking-widest uppercase">2005 - 2008</span>
                             <h3 class="text-2xl font-bold mt-2">Graphic Designer</h3>
@@ -254,12 +254,12 @@
 
         <!-- Portfolio Section -->
         <section id="portfolio" class="py-32 bg-dark-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-4xl mx-auto mb-24 scroll-animate">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-4xl mx-auto mb-24 scroll-animate">
                     <h2 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter uppercase">My <span class="text-brand-500">Portfolio</span></h2>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                     <!-- Video Box -->
                     <a href="https://www.youtube.com/@ThanveerQuraishin1985" target="_blank" class="bg-dark-800 p-10 rounded-[2.5rem] border border-gray-700 hover:border-brand-500/50 hover:bg-dark-800/50 transition-all duration-500 group scroll-animate block h-full">
                         <div class="w-16 h-16 bg-gray-700/50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-500/10 transition-colors">
@@ -283,7 +283,7 @@
                         <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark-900 text-gray-500 text-[10px] font-black uppercase tracking-widest">In Development</span>
                     </div>
 
-                    <!-- Music Box (New) -->
+                    <!-- Music Box -->
                     <div class="bg-dark-800 p-10 rounded-[2.5rem] border border-gray-700 hover:border-brand-500/50 hover:bg-dark-800/50 transition-all duration-500 group scroll-animate h-full">
                         <div class="w-16 h-16 bg-gray-700/50 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-brand-500/10 transition-colors">
                             <svg class="w-8 h-8 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
@@ -296,68 +296,24 @@
             </div>
         </section>
 
-        <!-- References Section -->
-        <section class="py-32 bg-dark-800 border-t border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-4xl font-bold mb-16 text-center scroll-animate">Professional <span class="text-brand-500">References</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <div class="p-8 bg-dark-900 rounded-3xl border border-gray-700 scroll-animate">
-                        <h4 class="text-xl font-bold">Mustafa Kassim</h4>
-                        <p class="text-brand-500 text-xs font-bold uppercase mt-1 tracking-widest">Founder</p>
-                        <p class="text-gray-500 mt-4 text-sm font-medium">Roar Global</p>
-                    </div>
-                    <div class="p-8 bg-dark-900 rounded-3xl border border-gray-700 scroll-animate">
-                        <h4 class="text-xl font-bold">Sisil Ratnayake</h4>
-                        <p class="text-brand-500 text-xs font-bold uppercase mt-1 tracking-widest">Director</p>
-                        <p class="text-gray-500 mt-4 text-sm font-medium">News 1st | MTV Channel</p>
-                    </div>
-                    <div class="p-8 bg-dark-900 rounded-3xl border border-gray-700 scroll-animate">
-                        <h4 class="text-xl font-bold">Irfan Ahmed</h4>
-                        <p class="text-brand-500 text-xs font-bold uppercase mt-1 tracking-widest">Director</p>
-                        <p class="text-gray-500 mt-4 text-sm font-medium">Satis Agencies</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact" class="py-32 bg-dark-900 relative overflow-hidden">
-            <div class="absolute inset-0 hero-gradient opacity-30"></div>
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center scroll-animate">
                 <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter uppercase">Let's Create</h2>
-                <p class="text-xl text-gray-400 mb-12 font-light">Bring your vision to life with professional editing and design.</p>
-                
                 <div class="flex flex-col items-center gap-6">
                     <a href="mailto:thanveerquraishin@gmail.com" class="text-3xl md:text-5xl font-bold text-white hover:text-brand-500 transition-colors break-all">
                         thanveerquraishin@gmail.com
                     </a>
                     <a href="https://wa.me/94777436116" target="_blank" class="flex items-center gap-4 px-8 py-4 bg-dark-800 border border-gray-700 rounded-full hover:border-brand-500 transition-all group">
                         <span class="text-xl font-bold">+94 777 436 116</span>
-                        <div class="w-8 h-8 rounded-full bg-[#25D366] flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        </div>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-dark-900 border-t border-gray-800/50 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center font-bold text-lg">TQ</div>
-                <span class="font-bold text-xl tracking-tighter">Thanveer Quraishin</span>
-            </div>
-            <div class="flex gap-6">
-                <a href="https://www.facebook.com/ThanveerQuraishin/" target="_blank" class="text-gray-500 hover:text-white transition-colors">Facebook</a>
-                <a href="https://www.linkedin.com/in/thanweer-quraishin-71094819/" target="_blank" class="text-gray-500 hover:text-white transition-colors">LinkedIn</a>
-                <a href="https://wa.me/94777436116" target="_blank" class="text-gray-500 hover:text-white transition-colors">WhatsApp</a>
-            </div>
-            <div class="text-gray-600 text-[10px] font-bold uppercase tracking-[0.4em]">
-                &copy; <span id="year"></span> &bull; Crafted for Excellence
-            </div>
-        </div>
+    <footer class="bg-dark-900 border-t border-gray-800/50 py-16 text-center">
+        <p class="text-gray-600 text-[10px] font-black uppercase tracking-[0.4em]">&copy; <span id="year"></span> &bull; Crafted for Excellence</p>
     </footer>
 
     <script>
@@ -376,25 +332,18 @@
 
         function renderLogos(containerId) {
             const container = document.getElementById(containerId);
+            if (!container) return;
             container.innerHTML = '';
-            
             logos.forEach(logo => {
                 const div = document.createElement('div');
                 div.className = 'logo-item';
-                
                 const img = document.createElement('img');
                 img.src = logo.src;
                 img.alt = logo.alt;
                 img.className = 'client-logo';
-                
-                img.onerror = function() {
-                    const fallback = document.createElement('span');
-                    fallback.className = 'client-logo-fallback';
-                    fallback.textContent = logo.alt;
-                    div.innerHTML = '';
-                    div.appendChild(fallback);
+                img.onerror = () => {
+                    div.innerHTML = `<span class="client-logo-fallback">${logo.alt}</span>`;
                 };
-                
                 div.appendChild(img);
                 container.appendChild(div);
             });
@@ -403,22 +352,15 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderLogos('logo-container-1');
             renderLogos('logo-container-2');
-
-            const yearEl = document.getElementById('year');
-            if (yearEl) yearEl.textContent = new Date().getFullYear();
-
+            document.getElementById('year').textContent = new Date().getFullYear();
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
-
-            document.querySelectorAll('.scroll-animate').forEach((el) => {
-                observer.observe(el);
-            });
+            document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
         });
     </script>
 </body>
