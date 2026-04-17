@@ -76,7 +76,7 @@
         }
 
         .clamped-text {
-            line-height: 0.75 !important;
+            line-height: 0.8 !important;
             letter-spacing: -0.06em !important;
         }
 
@@ -111,12 +111,16 @@
             inset: 0;
             background: rgba(15, 23, 42, 0.98);
             z-index: 100;
-            padding: 2rem;
+            padding: 1rem;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
         
+        @media (min-width: 768px) {
+            #gallery-modal { padding: 2rem; }
+        }
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
@@ -164,22 +168,23 @@
         <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden hero-bg">
             <div class="max-w-7xl mx-auto px-4 text-center relative z-10 pt-20">
                 <div class="fade-in">
-                    <span class="inline-block px-3 py-1 bg-brand-500 text-white text-[10px] font-black uppercase tracking-[0.4em] mb-12 rounded">
-                        ESTABLISHED 1985
+                    <!-- Updated badge to be more modest -->
+                    <span class="inline-block px-4 py-1.5 bg-brand-500/10 border border-brand-500/30 text-brand-500 text-[10px] font-black uppercase tracking-[0.4em] mb-12 rounded-full">
+                        Available for Projects
                     </span>
                     
-                    <h1 class="clamped-text text-7xl sm:text-9xl md:text-[11rem] lg:text-[13.5rem] font-black mb-10 drop-shadow-2xl uppercase">
+                    <h1 class="clamped-text text-6xl sm:text-8xl md:text-[11rem] lg:text-[13.5rem] font-black mb-10 drop-shadow-2xl uppercase">
                         THANVEER <br>
                         QURAISHIN
                     </h1>
 
                     <div class="flex items-center justify-center gap-4 mb-16">
-                        <div class="h-px w-12 bg-white/20"></div>
-                        <span class="text-xs md:text-sm font-black uppercase tracking-[0.8em] text-gray-400">The Storyteller</span>
-                        <div class="h-px w-12 bg-white/20"></div>
+                        <div class="h-px w-8 sm:w-12 bg-white/20"></div>
+                        <span class="text-[10px] sm:text-xs font-black uppercase tracking-[0.5em] sm:tracking-[0.8em] text-gray-400">The Storyteller</span>
+                        <div class="h-px w-8 sm:w-12 bg-white/20"></div>
                     </div>
                     
-                    <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-6">
                         <a href="#portfolio" class="px-10 py-5 bg-white text-black rounded font-black uppercase tracking-widest text-[10px] hover:bg-brand-500 hover:text-white transition-all transform hover:scale-105">
                             Explore Works
                         </a>
@@ -197,11 +202,11 @@
             <div class="max-w-5xl mx-auto px-6">
                 <div class="scroll-animate">
                     <h2 class="text-brand-500 font-black text-xs tracking-[0.5em] uppercase mb-8">About Me</h2>
-                    <h3 class="text-4xl md:text-7xl font-black uppercase leading-[0.9] mb-12">
+                    <h3 class="text-4xl md:text-7xl font-black uppercase leading-[0.95] mb-12">
                         CRAFTING NARRATIVES <br> <span class="text-gray-600">THROUGH MOTION.</span>
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <p class="text-gray-400 font-medium leading-relaxed text-xl italic">
+                        <p class="text-gray-400 font-medium leading-relaxed text-lg md:text-xl italic">
                             "Every frame is a canvas, every cut is a beat. My goal is to find the soul within the footage."
                         </p>
                         <p class="text-gray-500 font-medium leading-relaxed">
@@ -223,55 +228,58 @@
         </section>
 
         <!-- Work Experience -->
-        <section id="experience" class="py-32 bg-dark-900">
+        <section id="experience" class="py-24 sm:py-32 bg-dark-900">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-20 scroll-animate">
-                    <div>
-                        <h2 class="clamped-text text-6xl md:text-9xl font-black uppercase">WORK<br><span class="text-brand-500">EXPERIENCE</span></h2>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 sm:mb-20 scroll-animate">
+                    <div class="w-full">
+                        <!-- Adjusted font sizing and line-height for mobile stability -->
+                        <h2 class="clamped-text text-5xl sm:text-7xl md:text-9xl font-black uppercase leading-[0.8] tracking-tighter">
+                            WORK<br><span class="text-brand-500">EXPERIENCE</span>
+                        </h2>
                     </div>
-                    <div class="h-px w-full md:w-1/4 bg-white/10 mt-8 md:mb-6"></div>
+                    <div class="h-px w-full md:w-1/4 bg-white/10 mt-6 md:mb-6"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-animate">
-                    <div class="experience-card p-10 rounded-2xl border-brand-500/30">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 scroll-animate">
+                    <div class="experience-card p-8 sm:p-10 rounded-2xl border-brand-500/30">
                         <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">Current</div>
-                        <h3 class="text-2xl font-black uppercase mb-1">Freelance Video Editor</h3>
+                        <h3 class="text-xl sm:text-2xl font-black uppercase mb-1 leading-tight">Freelance Video Editor</h3>
                         <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">Open to Work</p>
                     </div>
 
-                    <div class="experience-card p-10 rounded-2xl">
+                    <div class="experience-card p-8 sm:p-10 rounded-2xl">
                         <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2024 - Feb 2025</div>
-                        <h3 class="text-2xl font-black uppercase mb-1">PORT CITY BPO, AITKEN SPENCE</h3>
+                        <h3 class="text-xl sm:text-2xl font-black uppercase mb-1 leading-tight">PORT CITY BPO, AITKEN SPENCE</h3>
                         <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">VIDEO EDITOR | GRAPHIC DESIGNER</p>
                     </div>
 
-                    <div class="experience-card p-10 rounded-2xl">
+                    <div class="experience-card p-8 sm:p-10 rounded-2xl">
                         <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2022 - 2024</div>
-                        <h3 class="text-2xl font-black uppercase mb-1">FIRST GLOBAL ACADEMY</h3>
+                        <h3 class="text-xl sm:text-2xl font-black uppercase mb-1 leading-tight">FIRST GLOBAL ACADEMY</h3>
                         <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">VIDEO EDITOR | GRAPHIC DESIGNER</p>
                     </div>
 
-                    <div class="experience-card p-10 rounded-2xl">
+                    <div class="experience-card p-8 sm:p-10 rounded-2xl">
                         <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2021 - 2022</div>
-                        <h3 class="text-2xl font-black uppercase mb-1">VIBE TELEVISION</h3>
+                        <h3 class="text-xl sm:text-2xl font-black uppercase mb-1 leading-tight">VIBE TELEVISION</h3>
                         <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">EXECUTIVE SENIOR VIDEO EDITOR</p>
                     </div>
 
-                    <div class="experience-card p-10 rounded-2xl">
+                    <div class="experience-card p-8 sm:p-10 rounded-2xl">
                         <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2018 - 2021</div>
-                        <h3 class="text-2xl font-black uppercase mb-1">ROAR GLOBAL</h3>
+                        <h3 class="text-xl sm:text-2xl font-black uppercase mb-1 leading-tight">ROAR GLOBAL</h3>
                         <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">SENIOR VIDEO EDITOR</p>
                     </div>
 
-                    <div class="experience-card p-10 rounded-2xl">
+                    <div class="experience-card p-8 sm:p-10 rounded-2xl">
                         <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2011 - 2018</div>
-                        <h3 class="text-2xl font-black uppercase mb-1">D STUDIO CMB</h3>
+                        <h3 class="text-xl sm:text-2xl font-black uppercase mb-1 leading-tight">D STUDIO CMB</h3>
                         <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">VIDEO EDITOR | GRAPHIC DESIGNER</p>
                     </div>
 
-                    <div class="experience-card p-10 rounded-2xl">
+                    <div class="experience-card p-8 sm:p-10 rounded-2xl md:col-span-2 lg:col-span-1">
                         <div class="text-brand-500 font-black text-[10px] tracking-widest uppercase mb-4">2005 - 2008</div>
-                        <h3 class="text-2xl font-black uppercase mb-1 leading-tight">ASSOCIATED NEWSPAPERS OF CEYLON LTD</h3>
+                        <h3 class="text-xl sm:text-2xl font-black uppercase mb-1 leading-tight uppercase">ASSOCIATED NEWSPAPERS OF CEYLON</h3>
                         <p class="text-gray-600 text-[10px] font-black uppercase tracking-widest">GRAPHIC DESIGNER | COLOMBO 01</p>
                     </div>
                 </div>
@@ -286,7 +294,7 @@
                     <!-- Tech Stack -->
                     <div class="scroll-animate">
                         <div class="flex items-center gap-4 mb-8">
-                            <h2 class="text-4xl font-black tracking-tighter uppercase">TECH STACK</h2>
+                            <h2 class="text-3xl sm:text-4xl font-black tracking-tighter uppercase">TECH STACK</h2>
                             <div class="h-px flex-grow bg-white/5"></div>
                         </div>
                         <div class="grid grid-cols-1 gap-0">
@@ -316,12 +324,12 @@
                     <!-- AI Tools -->
                     <div class="scroll-animate">
                         <div class="flex items-center gap-4 mb-8">
-                            <h2 class="text-4xl font-black tracking-tighter uppercase">AI TOOLS</h2>
+                            <h2 class="text-3xl sm:text-4xl font-black tracking-tighter uppercase">AI TOOLS</h2>
                             <div class="h-px flex-grow bg-white/5"></div>
                         </div>
                         <div class="grid grid-cols-1 gap-0">
                             <div class="software-grid-item">
-                                <span class="font-black uppercase tracking-widest text-sm">Nano Banana</span>
+                                <span class="font-black uppercase tracking-widest text-sm">Midjourney / Firefly</span>
                                 <i data-lucide="sparkles" class="w-4 h-4 opacity-30"></i>
                             </div>
                             <div class="software-grid-item">
@@ -347,7 +355,7 @@
                 <!-- References Row -->
                 <div class="scroll-animate max-w-4xl">
                     <div class="flex items-center gap-4 mb-12">
-                        <h2 class="text-4xl font-black tracking-tighter uppercase">REFERENCES</h2>
+                        <h2 class="text-3xl sm:text-4xl font-black tracking-tighter uppercase">REFERENCES</h2>
                         <div class="h-px flex-grow bg-white/5"></div>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -401,12 +409,12 @@
         <!-- Graphic Gallery Modal -->
         <div id="gallery-modal">
             <div class="w-full max-w-7xl flex justify-between items-center mb-8 px-4">
-                <h3 class="text-3xl font-black uppercase tracking-tighter">Graphic Portfolio</h3>
-                <button onclick="closeGallery()" class="p-3 hover:bg-white/10 rounded-full transition-colors">
-                    <i data-lucide="x" class="w-8 h-8"></i>
+                <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tighter">Graphic Portfolio</h3>
+                <button onclick="closeGallery()" class="p-2 sm:p-3 hover:bg-white/10 rounded-full transition-colors">
+                    <i data-lucide="x" class="w-6 h-6 sm:w-8 sm:h-8"></i>
                 </button>
             </div>
-            <div id="gallery-grid" class="w-full max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 overflow-y-auto px-4 pr-2 custom-scrollbar">
+            <div id="gallery-grid" class="w-full max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 overflow-y-auto px-4 pr-2 custom-scrollbar">
                 <!-- Images will be injected here -->
             </div>
         </div>
@@ -414,7 +422,7 @@
         <!-- Let's Talk Section -->
         <section id="contact" class="py-40 bg-dark-900 border-t border-white/5">
             <div class="max-w-7xl mx-auto px-6 scroll-animate">
-                <h2 class="clamped-text text-7xl md:text-[11rem] font-black mb-20 uppercase tracking-tighter">LET'S<br>TALK.</h2>
+                <h2 class="clamped-text text-6xl sm:text-7xl md:text-[11rem] font-black mb-20 uppercase tracking-tighter">LET'S<br>TALK.</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-20 pt-16 border-t border-white/10">
                     <!-- Direct Contacts -->
@@ -425,7 +433,7 @@
                             </div>
                             <div class="flex flex-col">
                                 <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Email Me</span>
-                                <a href="mailto:thanveerquraishin@gmail.com" class="text-xl md:text-2xl font-black uppercase tracking-tight text-white transition-colors">
+                                <a href="mailto:thanveerquraishin@gmail.com" class="text-lg sm:text-xl md:text-2xl font-black uppercase tracking-tight text-white transition-colors break-all">
                                     thanveerquraishin@gmail.com
                                 </a>
                             </div>
@@ -474,7 +482,7 @@
 
     <footer class="py-16 bg-dark-900 border-t border-white/5 text-center">
         <p class="text-[10px] font-black uppercase tracking-[0.6em] text-gray-800">
-            THANVEER QURAISHIN &bull; THE STORYTELLER &bull; EST 1985
+            THANVEER QURAISHIN &bull; THE STORYTELLER
         </p>
     </footer>
 
@@ -493,7 +501,7 @@
             { src: 'RoarStudios.png', alt: 'Roar Studios' }
         ];
 
-        // GRAPHIC WORKS (Updated with specifically requested new images)
+        // GRAPHIC WORKS
         const graphicWorks = [
             'image-(01).jpg',
             'image-(02).jpg',
