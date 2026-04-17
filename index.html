@@ -75,7 +75,6 @@
             opacity: 1;
         }
 
-        /* The Clamped Typography Look - matching "LET'S TALK" */
         .clamped-text {
             line-height: 0.75 !important;
             letter-spacing: -0.06em !important;
@@ -105,12 +104,28 @@
             color: #6366f1;
         }
 
-        /* Custom SVG sizing for social icons to ensure uniformity */
-        .social-icon {
-            width: 24px;
-            height: 24px;
-            fill: white;
-            transition: all 0.3s ease;
+        /* Gallery Overlay */
+        #gallery-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.98);
+            z-index: 100;
+            padding: 2rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -366,14 +381,15 @@
                         <p class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-white relative z-10">THE SHOWREEL</p>
                     </a>
 
-                    <div class="group relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[2rem] p-12 flex flex-col justify-end scroll-animate">
+                    <!-- Graphic Designs Button - Opens Gallery -->
+                    <button onclick="openGallery()" class="group relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[2rem] p-12 flex flex-col justify-end text-left scroll-animate">
                         <div class="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <h3 class="text-5xl font-black uppercase relative z-10 transition-transform duration-500 group-hover:-translate-y-4">GRAPHIC<br>DESIGNS</h3>
-                        <p class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-white relative z-10">VISUAL IDENTITY</p>
-                    </div>
+                        <p class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-white relative z-10">VIEW GALLERY</p>
+                    </button>
 
                     <!-- Music scores linked to SoundCloud -->
-                    <a href="https://soundcloud.com/user-462799033/tracks" target="_blank" class="group relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[2rem] p-12 flex flex-col justify-end scroll-animate">
+                    <a href="https://soundcloud.com/thanveer-quraishin" target="_blank" class="group relative aspect-[4/5] bg-dark-900 overflow-hidden rounded-[2rem] p-12 flex flex-col justify-end scroll-animate">
                         <div class="absolute inset-0 bg-gradient-to-t from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <h3 class="text-5xl font-black uppercase relative z-10 transition-transform duration-500 group-hover:-translate-y-4">MUSIC<br>SCORES</h3>
                         <p class="text-[10px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-white relative z-10">SOUND DESIGN & BEATS</p>
@@ -382,70 +398,71 @@
             </div>
         </section>
 
+        <!-- Graphic Gallery Modal -->
+        <div id="gallery-modal">
+            <div class="w-full max-w-7xl flex justify-between items-center mb-8 px-4">
+                <h3 class="text-3xl font-black uppercase tracking-tighter">Graphic Portfolio</h3>
+                <button onclick="closeGallery()" class="p-3 hover:bg-white/10 rounded-full transition-colors">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+            </div>
+            <div id="gallery-grid" class="w-full max-w-7xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 overflow-y-auto px-4 pr-2 custom-scrollbar">
+                <!-- Images will be injected here -->
+            </div>
+        </div>
+
         <!-- Let's Talk Section -->
         <section id="contact" class="py-40 bg-dark-900 border-t border-white/5">
             <div class="max-w-7xl mx-auto px-6 scroll-animate">
-                <!-- Visual Header -->
                 <h2 class="clamped-text text-7xl md:text-[11rem] font-black mb-20 uppercase tracking-tighter">LET'S<br>TALK.</h2>
                 
-                <!-- Contact Links Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-20 pt-16 border-t border-white/10">
-                    
-                    <!-- Left Side: Primary Direct Contacts -->
+                    <!-- Direct Contacts -->
                     <div class="space-y-12">
-                        <!-- Email -->
                         <div class="flex items-center gap-6 group">
-                            <div class="w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
-                                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 4v10h16V8l-8 5-8-5zm0-2l8 5 8-5H4z"/>
-                                </svg>
+                            <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center transition-all group-hover:bg-brand-500 group-hover:scale-110">
+                                <i data-lucide="mail" class="w-6 h-6 text-brand-500 group-hover:text-white"></i>
                             </div>
-                            <a href="mailto:thanveerquraishin@gmail.com" class="text-xl md:text-3xl font-black uppercase tracking-tight text-white hover:text-brand-500 transition-colors">
-                                thanveerquraishin@gmail.com
-                            </a>
+                            <div class="flex flex-col">
+                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Email Me</span>
+                                <a href="mailto:thanveerquraishin@gmail.com" class="text-xl md:text-2xl font-black uppercase tracking-tight text-white transition-colors">
+                                    thanveerquraishin@gmail.com
+                                </a>
+                            </div>
                         </div>
 
-                        <!-- WhatsApp -->
                         <div class="flex items-center gap-6 group">
-                            <div class="w-12 h-12 flex items-center justify-center transition-transform group-hover:scale-110">
-                                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.004 2c-5.523 0-10 4.477-10 10 0 1.767.46 3.426 1.264 4.87L2 22l5.241-1.376A9.957 9.957 0 0012.004 22c5.523 0 10-4.477 10-10s-4.477-10-10-10zm0 1.5c4.687 0 8.5 3.813 8.5 8.5s-3.813 8.5-8.5 8.5c-1.63 0-3.15-.461-4.442-1.259l-.319-.196-3.1.812.827-3.003-.213-.339A8.46 8.46 0 013.504 12c0-4.687 3.813-8.5 8.5-8.5zm-3.5 3.5c-.172 0-.344.031-.504.094-.37.146-.615.485-.705.867-.174.743.08 1.632.559 2.457.776 1.336 2.063 2.684 3.402 3.402 1.338.718 2.711.956 3.633.633.513-.18.82-.676.716-1.163-.035-.164-.207-.34-.486-.473-.279-.133-1.649-.812-1.898-.902-.249-.09-.431-.135-.612.135-.181.27-.698.874-.856 1.054-.158.18-.316.203-.595.068-.279-.135-1.176-.433-2.242-1.384-.83-.739-1.389-1.652-1.551-1.932-.163-.279-.017-.431.122-.569.124-.124.279-.324.419-.486.139-.163.186-.279.279-.465.093-.186.047-.349-.023-.486-.07-.137-.612-1.474-.839-2.022-.22-.533-.443-.46-.612-.46z"/>
-                                </svg>
+                            <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center transition-all group-hover:bg-brand-500 group-hover:scale-110">
+                                <i data-lucide="message-circle" class="w-6 h-6 text-brand-500 group-hover:text-white"></i>
                             </div>
-                            <a href="https://wa.me/94777436116" target="_blank" class="text-xl md:text-3xl font-black uppercase tracking-tight text-white hover:text-brand-500 transition-colors">
-                                +94 777 436 116
-                            </a>
+                            <div class="flex flex-col">
+                                <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">WhatsApp</span>
+                                <a href="https://wa.me/94777436116" target="_blank" class="text-xl md:text-2xl font-black uppercase tracking-tight text-white transition-colors">
+                                    +94 777 436 116
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Right Side: Social Ecosystem -->
+                    <!-- Social Handles -->
                     <div class="flex flex-col gap-10 md:border-l md:border-white/5 md:pl-20">
-                        <!-- LinkedIn -->
                         <a href="https://www.linkedin.com/in/thanweer-quraishin-71094819/" target="_blank" class="flex items-center gap-6 group">
-                            <div class="transition-transform group-hover:scale-110">
-                                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a2.7 2.7 0 0 0-2.7-2.7c-1.2 0-2 .7-2.3 1.3h-.1V10.1h-3.3v8.4h3.4v-4.4c0-.7.3-1.1.9-1.1s.9.4.9 1.1v4.4h3.3M6.7 18.5h3.4V10.1H6.7v8.4m1.7-10a1.8 1.8 0 0 0 1.8-1.8 1.8 1.8 0 0 0-1.8-1.8 1.8 1.8 0 0 0-1.8 1.8 1.8 1.8 0 0 0 1.8 1.8z"/>
-                                </svg>
+                            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center transition-all group-hover:bg-[#0077b5] group-hover:scale-110">
+                                <i data-lucide="linkedin" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
                             </div>
                             <span class="text-xl font-black uppercase tracking-widest text-gray-500 group-hover:text-white transition-colors">LinkedIn</span>
                         </a>
 
-                        <!-- Instagram -->
                         <a href="https://www.instagram.com/thanveerquraishin/" target="_blank" class="flex items-center gap-6 group">
-                            <div class="transition-transform group-hover:scale-110">
-                                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
-                                </svg>
+                            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center transition-all group-hover:bg-gradient-to-tr group-hover:from-[#f9ce34] group-hover:to-[#ee2a7b] group-hover:scale-110">
+                                <i data-lucide="instagram" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
                             </div>
                             <span class="text-xl font-black uppercase tracking-widest text-gray-500 group-hover:text-white transition-colors">Instagram</span>
                         </a>
 
-                        <!-- Facebook -->
                         <a href="https://www.facebook.com/ThanveerQuraishin/" target="_blank" class="flex items-center gap-6 group">
-                            <div class="transition-transform group-hover:scale-110">
-                                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"/>
-                                </svg>
+                            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center transition-all group-hover:bg-[#1877f2] group-hover:scale-110">
+                                <i data-lucide="facebook" class="w-5 h-5 text-gray-400 group-hover:text-white"></i>
                             </div>
                             <span class="text-xl font-black uppercase tracking-widest text-gray-500 group-hover:text-white transition-colors">Facebook</span>
                         </a>
@@ -462,6 +479,7 @@
     </footer>
 
     <script>
+        // CLIENT LOGOS
         const logos = [
             { src: 'AICPA.png', alt: 'AICPA' },
             { src: 'RoarMedia.png', alt: 'Roar Media' },
@@ -473,6 +491,25 @@
             { src: 'PodHub.png', alt: 'Pod Hub' },
             { src: 'DStudio.png', alt: 'D Studio' },
             { src: 'RoarStudios.png', alt: 'Roar Studios' }
+        ];
+
+        // GRAPHIC WORKS (Updated with new uploads)
+        const graphicWorks = [
+            'image.jpg',
+            'image (1).jpg',
+            'image (2).jpg',
+            'image (3).jpg',
+            'image (4).jpg',
+            'image (5).jpg',
+            'image (6).jpg',
+            'image (7).jpg',
+            'image (8).jpg',
+            'image (9).jpg',
+            'image_f7dadf.png',
+            'image_f7df02.png',
+            'image_f83c99.png',
+            'image_f83ffa.png',
+            'image_f9bae8.png'
         ];
 
         function renderLogos(containerId) {
@@ -491,6 +528,29 @@
                 div.appendChild(img);
                 container.appendChild(div);
             });
+        }
+
+        function openGallery() {
+            const modal = document.getElementById('gallery-modal');
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = '';
+            
+            graphicWorks.forEach(imgName => {
+                const img = document.createElement('img');
+                img.src = imgName;
+                img.className = 'w-full aspect-square object-cover rounded-xl border border-white/10 hover:border-brand-500 transition-all cursor-pointer shadow-2xl';
+                img.loading = 'lazy';
+                img.onclick = () => window.open(imgName, '_blank');
+                grid.appendChild(img);
+            });
+
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            document.getElementById('gallery-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
         document.addEventListener('DOMContentLoaded', () => {
